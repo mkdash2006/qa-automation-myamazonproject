@@ -2,6 +2,7 @@ from playwright.sync_api import sync_playwright, expect, Page
 from utils import jsonhandling
 from utils import csvhandling
 from utils.csvhandling import csvhandling
+from utils.excelhandling import excelhandling
 from utils.jsonhandling import jsonhandling
 
 
@@ -16,26 +17,32 @@ class SignInHome:
         self.submitCodeBtn= page.locator("input.a-button-input")
         self.passwordTextField= page.locator("#ap_password")  
 
-    def fill_email_or_mobile_text_field(self):
-        #json data
-        json_data = jsonhandling('testdata\\creds.json')  
-        self.emailOrMobileTextField.fill(json_data["positivedata"]["email"]) 
+    def fillEmailOrMobileTextField(self):
+        # #json data
+        # json_data = jsonhandling('testdata\\creds.json')  
+        # self.emailOrMobileTextField.fill(json_data["positivedata"]["email"]) 
         # #csv data
         # csv_data = csvhandling("testdata\\creds2.csv")
         # self.emailOrMobileTextField.fill(csv_data[0]["email"], timeout=6000)
+        # excel data
+        excel_data = excelhandling('testdata\\sample_creds.xlsx')
+        self.emailOrMobileTextField.fill(excel_data[4][0], timeout=60000)
 
-    def fill_password_text_field(self):
-        #json data
-        json_data = jsonhandling('testdata\\creds.json') 
-        self.passwordTextField.fill(json_data["positivedata"]["password"])
+    def fillPasswordTextField(self):
+        # #json data
+        # json_data = jsonhandling('testdata\\creds.json') 
+        # self.passwordTextField.fill(json_data["positivedata"]["password"])
         # #csv data
         # csv_data = csvhandling("testdata\\creds2.csv")
         # self.password_text_field.fill(csv_data[0]["password"], timeout=6000)
+        # excel data
+        excel_data = excelhandling('testdata\\sample_creds.xlsx')
+        self.passwordTextField.fill(excel_data[4][1], timeout=60000)
 
-    def click_on_continue_btn(self):
-        self.continueBtn.click()              
+    def clickOnContinueBtn(self):
+        self.continueBtn.click(timeout=60000)              
 
-    def validate_next_signpage(self):
+    def validateNextSignPage(self):
         # Verify that the next sign-in step is displayed
-        expect(self.passwordTextField).to_be_visible(timeout=6000)  # Adjust the timeout as needed
+        expect(self.passwordTextField).to_be_visible(timeout=60000)  # Adjust the timeout as needed
     

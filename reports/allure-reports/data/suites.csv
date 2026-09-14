@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2263","test_search_for_iphone[chromium]","tests","2026-09-08","passed","2026-09-08","","test_homepage","",""
+"","3892","test_signin[chromium]","tests","2026-09-08","passed","2026-09-08","","test_signin","",""
+"","1081","test_shopping_cart[chromium]","tests","2026-09-08","passed","2026-09-08","","test_shoppingcart","",""
+"","2224","test_search_results[chromium]","tests","2026-09-08","passed","2026-09-08","","test_results","",""
