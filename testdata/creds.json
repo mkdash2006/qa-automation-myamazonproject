@@ -1,0 +1,14 @@
+
+{
+"positivedata":
+    {
+    "email": "trainingplaywright@gmail.com",
+    "password": "Welcome@04"
+    },
+
+"negativedata":
+    {
+    "email": "trainingplaywright@gmail.com",
+    "password": "Welcome@04"
+    }
+}
